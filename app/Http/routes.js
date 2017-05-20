@@ -19,9 +19,19 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
+Route.group('measure', function () {
+  Route.post('', 'MeasureController.create').middleware('auth')
+  Route.get('', 'MeasureController.getAll')
+  Route.get('/:id', 'MeasureController.get')
+  Route.get('name/:name', 'MeasureController.getByName')
+}).prefix('api/measure')
+
+
 Route.group('ingredient', function () {
   Route.post('', 'IngredientController.create').middleware('auth')
   Route.get('', 'IngredientController.getAll')
+  Route.get('/:id', 'IngredientController.get')
+  Route.get('name/:name', 'IngredientController.getByName')
 }).prefix('api/ingredient')
 
 Route.group('user', function () {
