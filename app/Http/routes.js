@@ -23,6 +23,8 @@ Route.group('recipe', function () {
   Route.post('', 'RecipeController.create').middleware('auth')
   Route.post('add-ingredient/:id', 'RecipeIngredientController.create').middleware('auth')
   Route.post('remove-ingredient/:id', 'RecipeIngredientController.remove').middleware('auth')
+  Route.put('/:id', 'RecipeController.update').middleware('auth')
+  Route.delete('/:id', 'RecipeController.remove').middleware('auth')
   Route.get('', 'RecipeController.getAll')
   Route.get('/:id', 'RecipeController.get')
 }).prefix('api/recipe')
