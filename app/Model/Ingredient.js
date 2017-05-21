@@ -17,6 +17,12 @@ class Ingredient extends Lucid {
       name: 'required|unique:ingredients|min:2|max:40'
     }
   }
+
+  ingredients () {
+    return this.hasManyThrough('App/Model/Recipe', 'App/Model/RecipeIngredient', 'id', 'ingredient_id', 'recipe_id', 'id')
+  }
+
+  
 }
 
 module.exports = Ingredient

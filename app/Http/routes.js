@@ -19,6 +19,13 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
+Route.group('recipe', function () {
+  Route.post('', 'RecipeController.create').middleware('auth')
+  Route.post('add-ingredient/:id', 'RecipeIngredientController.create').middleware('auth')
+  Route.get('', 'RecipeController.getAll')
+  Route.get('/:id', 'RecipeController.get')
+}).prefix('api/recipe')
+
 Route.group('measure', function () {
   Route.post('', 'MeasureController.create').middleware('auth')
   Route.get('', 'MeasureController.getAll')
