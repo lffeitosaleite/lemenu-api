@@ -22,6 +22,7 @@ Route.on('/').render('welcome')
 Route.group('recipe', function () {
   Route.post('', 'RecipeController.create').middleware('auth')
   Route.post('add-ingredient/:id', 'RecipeIngredientController.create').middleware('auth')
+  Route.post('remove-ingredient/:id', 'RecipeIngredientController.remove').middleware('auth')
   Route.get('', 'RecipeController.getAll')
   Route.get('/:id', 'RecipeController.get')
 }).prefix('api/recipe')
