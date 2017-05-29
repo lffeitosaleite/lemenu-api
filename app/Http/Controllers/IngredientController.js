@@ -6,17 +6,28 @@ const Ingredient = use('App/Model/Ingredient')
 class IngredientController {
 
   *getByName (request, response) {
-    const ingredient = yield Ingredient.findBy('name', request.param('name'))
-    response.json(ingredient)
+    try{ 
+      const ingredient = yield Ingredient.findByOrFail('name', request.param('name'))
+      response.json(ingredient)
+    } catch(e) {
+      response.json({'message': 'Ingrediente não encontrado'})  
+      return
+    }
   }
 
   *get (request, response) {
-    const ingredient = yield Ingredient.find(request.param('id'))
-    response.json(ingredient)
+    try {
+      const ingredient = yield Ingredient.findOrFail(request.param('id'))
+      response.json(ingredient)
+    } catch(e) {
+      response.json({'message': 'Ingrediente não encontrado'})  
+      return
+    }
   }
 
   * getAll (request, response) {
-    const ingredients = yield Ingredient.all()
+    const ingredients = yield Ingredient.query()
+    .with('recipes').fetch()
     response.json(ingredients)
   }
 

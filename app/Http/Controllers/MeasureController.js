@@ -5,13 +5,22 @@ const Measure = use('App/Model/Measure')
 
 class MeasureController {
   * getByName (request, response) {
-    const measure = yield Measure.findBy('name', request.param('name'))
-    response.json(measure)
+    try{
+      const measure = yield Measure.findByOrFail('name', request.param('name'))
+      response.json(measure)
+    } catch (e) {
+      response.json({'message': 'Medida não encontrada'})
+    }
+    
   }
 
   * get (request, response) {
-    const measure = yield Measure.find(request.param('id'))
-    response.json(measure)
+    try{
+      const measure = yield Measure.find(request.param('id'))
+      response.json(measure)
+    } catch (e) {
+      response.json({'message': 'Medida não encontrada'})
+    }
   }
 
   * getAll (request, response) {
