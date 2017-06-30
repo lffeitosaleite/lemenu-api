@@ -1,49 +1,42 @@
 'use strict'
 
-const Validator = use('Validator')
 const Ingredient = use('App/Model/Ingredient')
+const UserIngredient = use('App/Model/UserIngredient')
+const Validator = use('Validator')
 
 class IngredientController {
+  * addToUser (request, response) {
+		const validation = yield Validator.validate({name: request.input('name')}, Ingredient.rules, Ingredient.messages)
 
-  *getByName (request, response) {
-    try{ 
-      const ingredient = yield Ingredient.findByOrFail('name', request.param('name'))
-      response.json(ingredient)
-    } catch(e) {
-      response.json({'message': 'Ingrediente não encontrado'})  
-      return
-    }
+    if(validation.fails()) {
+			response.status(400)
+			.json({data:validation.messages()})
+			return
+		}
+
+    const ingredient = yield Ingredient.findOrCreate({
+      'name': request.input('name')
+    }, {'name': request.input('name')})
+
+    const userIngredient = yield UserIngredient.findOrCreate({
+      'user_id': request.authUser.id,
+      'ingredient_id': ingredient.id
+    }, {
+      'user_id': request.authUser.id,
+      'ingredient_id': ingredient.id
+    })
+
+    response.status(201)
+    .json({message: 'ingrediente adicionado'})
   }
 
-  *get (request, response) {
-    try {
-      const ingredient = yield Ingredient.findOrFail(request.param('id'))
-      response.json(ingredient)
-    } catch(e) {
-      response.json({'message': 'Ingrediente não encontrado'})  
-      return
+  * removeFromUser (request, response) {
+    const userIngredient = yield UserIngredient.query().where('user_id', request.authUser.id).where('ingredient_id', request.param('id')).first()
+    if(userIngredient !== null) {
+      yield userIngredient.delete()
     }
-  }
-
-  * getAll (request, response) {
-    const ingredients = yield Ingredient.query()
-    .with('recipes').fetch()
-    response.json(ingredients)
-  }
-
-  * create (request, response) {
-    const validation = yield Validator.validate(request.all(), Ingredient.rules, Ingredient.messages)
-
-    if (validation.fails()) {
-      response.json(validation.messages())
-      return
-    }
-
-    const ingredient = new Ingredient()
-    ingredient.fill(request.all())
-    yield ingredient.save()
-
-    response.json({message: 'Ingrediente criado com sucesso'})
+    response.status(200)
+    .json({message: 'ingrediente removido'})
   }
 }
 

@@ -10,7 +10,7 @@ module.exports = {
   | define multiple origins as string.
   |
   */
-  origin: false,
+  origin: '*',
 
   /*
   |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ module.exports = {
   | Comma seperated HTTP methods to be allowed.
   |
   */
-  methods: 'GET, PUT, POST',
+  methods: 'GET, PUT, POST, DELETE',
 
   /*
   |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ module.exports = {
   | Define Access-Control-Allow-Credentials header
   |
   */
-  credentials: false,
+  credentials: true,
 
   /*
   |--------------------------------------------------------------------------

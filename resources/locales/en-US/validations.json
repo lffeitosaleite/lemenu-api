@@ -1,0 +1,13 @@
+{
+  "field.required": "{field} is required",
+  "field.alpha_numeric": "{field} must be alphanumeric",
+  "field.unique": "{field} already in use",
+  "field.number.max": "maximum {field} is {max}",
+  "field.number.min": "minimum {field} is {min}",
+  "field.max": "{field} must not exceed {max} characters",
+  "field.min": "{field} must be at least {min} characters",
+  "field.email": "{field} must be a valid email",
+  "field.cofirmed": "{field} must match confirmation",
+  "field.integer": "{field} must be a integer",
+  "field.boolean": "{field} must be true or false"
+}

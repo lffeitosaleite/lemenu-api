@@ -183,7 +183,7 @@ module.exports = {
     | based on HTTP headers/query string.
     |
     */
-    locale: 'en',
+    locale: 'pt-BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -193,6 +193,6 @@ module.exports = {
     | Fallback locale to be used when actual locale is not supported.
     |
     */
-    fallbackLocale: 'en'
+    fallbackLocale: 'pt-BR'
   }
 }

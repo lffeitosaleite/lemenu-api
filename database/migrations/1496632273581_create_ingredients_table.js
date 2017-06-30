@@ -7,7 +7,7 @@ class IngredientsTableSchema extends Schema {
   up () {
     this.create('ingredients', (table) => {
       table.increments()
-      table.string('name', 60).notNullable().unique()
+      table.string('name', 80).notNullable().unique()
       table.timestamps()
     })
   }

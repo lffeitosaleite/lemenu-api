@@ -15,13 +15,13 @@ body {
 }
 
 .__banner {
-  background: #F4953B;
-  background: -moz-radial-gradient(top, ellipse cover, #F4953B 11%, #503d67 99%, #503d67 100%);
-  background: -webkit-gradient(radial, top center, 0, center center, 100%, color-stop(11%, #F4953B), color-stop(99%, #503d67), color-stop(100%, #503d67));
-  background: -webkit-radial-gradient(top, ellipse cover, #F4953B 11%, #503d67 99%, #503d67 100%);
-  background: -o-radial-gradient(top, ellipse cover, #F4953B 11%, #503d67 99%, #503d67 100%);
-  background: -ms-radial-gradient(top, ellipse cover, #F4953B 11%, #503d67 99%, #503d67 100%);
-  background: radial-gradient(ellipse at top, #F4953B 11%, #503d67 99%, #503d67 100%);
+  background: #ff5c5c;
+  background: -moz-radial-gradient(top, ellipse cover, #ff5c5c 11%, #503d67 99%, #503d67 100%);
+  background: -webkit-gradient(radial, top center, 0, center center, 100%, color-stop(11%, #ff5c5c), color-stop(99%, #503d67), color-stop(100%, #503d67));
+  background: -webkit-radial-gradient(top, ellipse cover, #ff5c5c 11%, #503d67 99%, #503d67 100%);
+  background: -o-radial-gradient(top, ellipse cover, #ff5c5c 11%, #503d67 99%, #503d67 100%);
+  background: -ms-radial-gradient(top, ellipse cover, #ff5c5c 11%, #503d67 99%, #503d67 100%);
+  background: radial-gradient(ellipse at top, #ff5c5c 11%, #503d67 99%, #503d67 100%);
 }
 
 .__banner {

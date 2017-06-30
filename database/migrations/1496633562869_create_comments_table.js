@@ -2,22 +2,22 @@
 
 const Schema = use('Schema')
 
-class RatesTableSchema extends Schema {
+class CommentsTableSchema extends Schema {
 
   up () {
-    this.create('rates', (table) => {
+    this.create('comments', (table) => {
       table.increments()
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.integer('recipe_id').unsigned().references('id').inTable('recipes')
-      table.integer('rate').notNullable()
+      table.string('comment', 1024).notNullable()
       table.timestamps()
     })
   }
 
   down () {
-    this.drop('rates')
+    this.drop('comments')
   }
 
 }
 
-module.exports = RatesTableSchema
+module.exports = CommentsTableSchema

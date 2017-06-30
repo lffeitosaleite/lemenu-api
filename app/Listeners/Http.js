@@ -3,6 +3,9 @@
 const Env = use('Env')
 const Youch = use('youch')
 const Http = exports = module.exports = {}
+const Antl = use('Antl')
+
+//TODO: add error handlers
 
 /**
  * handle errors occured during a Http request.
@@ -13,6 +16,22 @@ const Http = exports = module.exports = {}
  */
 Http.handleError = function * (error, request, response) {
   const status = error.status || 500
+
+  //if (error.name === 'SyntaxError'){
+    //yield response.status(500).json({error: Antl.formatMessage('messages.syntaxerror')})
+    //return
+  //}
+
+
+  if (error.name === 'ModelNotFoundException') {
+    yield response.status(404).json({message: 'recurso não encontrado'})
+    return
+  }
+
+  if (error.name === 'InvalidLoginException' || error.name === 'PasswordMisMatchException') {
+    yield response.status(401).json({message: 'credenciais inválidas'})
+    return
+  }
 
   /**
    * DEVELOPMENT REPORTER
@@ -25,6 +44,7 @@ Http.handleError = function * (error, request, response) {
     response.status(status).send(formattedErrors)
     return
   }
+
 
   /**
    * PRODUCTION REPORTER

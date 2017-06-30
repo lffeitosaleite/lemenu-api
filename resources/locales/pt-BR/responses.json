@@ -1,0 +1,34 @@
+{
+
+  "create.success": "criação de {obj} realizado com sucesso",
+  "create.fail": "falha ao criar {obj}",
+
+  "delete.success": "remoção de {obj} realizada com sucesso",
+  "delete.fail": "falha ao remover {obj}",
+
+  "add.success": "adição de {obj} realizada com sucesso",
+  "add.fail": "falha ao adicionar {obj}",
+
+  "retrieve.success": "obtenção de {obj} realizada com sucesso",
+  "retrieve.fail": "falha ao obter {obj}",
+
+  "send.success": "envio de {obj} realizado com sucesso",
+  "send.fail": "falha ao enviar {obj}",
+
+  "login.success": "logado com sucesso",
+  "login.fail": "falha ao fazer login",
+  "logout.success": "desconectado com sucesso",
+  "logout.fail": "falha ao desconectar",
+
+  "auth.required": "apenas usuários autenticados permitidos",
+  "unauth.required": "apenas visitantes permitidos",
+
+  "active.success": "ativado",
+  "inactive": "não ativado",
+  "not_found": "recurso não encontrado",
+  "expired": "{obj} expirou",
+  "invalid": "recurso inválido",
+  "already": "{obj} já está {action}",
+  "syntax_error": "servidor possui um erro de sintaxe"
+
+}

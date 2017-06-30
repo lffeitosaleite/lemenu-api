@@ -1,2 +1,3 @@
-# lemenu
-Lemenu is a web application for setting up menus and searching for recipes based on the ingredients you have.
+# LeMenu API
+
+Consiste em uma plataforma Web para auxiliar no gerenciamento de Cozinhas, sejam profissionais ou domiciliares, prover inventários tanto dos ingredientes quanto das receitas.

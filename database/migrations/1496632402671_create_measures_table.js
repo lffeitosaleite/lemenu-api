@@ -7,7 +7,7 @@ class MeasuresTableSchema extends Schema {
   up () {
     this.create('measures', (table) => {
       table.increments()
-      table.string('name', 20).notNullable().unique()
+      table.string('name', 80).notNullable().unique()
       table.timestamps()
     })
   }

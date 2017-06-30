@@ -1,0 +1,34 @@
+{
+
+  "create.success": "{obj} created with success",
+  "create.fail": "failed to create {obj}",
+
+  "delete.success": "{obj} deleted with success",
+  "delete.fail": "failed to delete {obj}",
+
+  "add.success": "{obj} added with success",
+  "add.fail": "failed to add {obj}",
+
+  "retrieve.success": "{obj} retrieved with success",
+  "retrieve.fail": "failed to retrive {obj}",
+
+  "send.success": "{obj} sent with success",
+  "send.fail": "failed to send {obj}",
+
+  "login.success": "logedd in successfully",
+  "login.fail": "failed to log in",
+  "logout.success": "logged out successfully",
+  "logout.fail": "failed to log out",
+
+  "auth.required": "only authenticated user allowed",
+  "unauth.required": "only guest user allowed",
+
+  "active.success": "activated",
+  "inactive": "not activated",
+  "not_found": "not found",
+  "expired": "{obj} has expired",
+  "invalid": "invalid {obj}",
+  "already": "{obj} already {action}",
+  "syntax_error": "server has an error in syntax"
+
+}

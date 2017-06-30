@@ -1,0 +1,13 @@
+{
+  "field.required": "preenchimento obrigatório de {field}",
+  "field.alpha_numeric": "{field} deve conter apenas letras e números",
+  "field.unique": "{field} já está em uso",
+  "field.number.max": "{field} deve ser no máximo {max}",
+  "field.number.min": "{field} deve ser no mínimo {min}",
+  "field.max": "{field} deve ter no máximo {max} caracteres",
+  "field.min": "{field} deve ter no mínimo {min} caracteres",
+  "field.email": "{field} deve ser um email válido",
+  "field.cofirmed": "{field} deve coincidir com confirmação",
+  "field.integer": "{field} deve ser um número inteiro",
+  "field.boolean": "{field} deve ser verdadeiro ou falso"
+}

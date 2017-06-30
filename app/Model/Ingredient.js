@@ -1,28 +1,30 @@
 'use strict'
 
 const Lucid = use('Lucid')
+const Antl = use('Antl')
 
 class Ingredient extends Lucid {
+
   static get messages () {
-    return {
-      'name.required': 'Nome de ingrediente é nescessário',
-      'name.unique': 'O nome de ingrediente já está em uso',
-      'name.min': 'Nome deve ter no mínimo 2 caractéres',
-      'name.max': 'Nome deve ter no máximo 40 caractéres'
-    }
-  }
+		return {
+			'name.required': 'nome é necessário',
+			'name.max': 'nome deve ter no máximo 64 caracteres',
+			'name.min': 'nome deve ter no mínimo 2 caracteres',
+		}
+	}
 
   static get rules () {
     return {
-      name: 'required|unique:ingredients|min:2|max:40'
+      name: 'required|min:2|max:64',
     }
   }
 
   recipes () {
-    return this.hasManyThrough('App/Model/Recipe', 'App/Model/RecipeIngredient', 'id', 'ingredient_id', 'recipe_id', 'id')
+    return this.hasManyThrough('App/Model/Recipe', 'App/Model/RecipeIngredientMeasure', 'id',  'ingredient_id', 'recipe_id', 'id')
   }
 
-  
+
+
 }
 
 module.exports = Ingredient
